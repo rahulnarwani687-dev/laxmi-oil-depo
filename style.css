@@ -1,0 +1,1784 @@
+@import url('./tokens.css');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap');
+
+/* ==========================================================================
+   RESET & BASE STYLES — GODDESS THEME (GOLDEN YELLOW, SACRED RED, ROYAL BLUE)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-ui);
+  line-height: var(--leading-body-ui);
+  letter-spacing: var(--tracking-body-ui);
+  color: var(--color-goddess-gold);
+  background-color: var(--surface-midnight-canvas);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: none !important;
+}
+
+/* Auspicious Watermark Background (Lotus, Diya, and Oil Drops) */
+.watermark-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url('../assets/watermark-botanical.svg');
+  background-repeat: repeat;
+  background-size: 350px 350px;
+  opacity: 0.12;
+}
+
+/* Site Max-Width Container */
+.site-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-20);
+}
+
+@media (min-width: 768px) {
+  .site-wrapper {
+    padding: 0 var(--spacing-32);
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-wrapper {
+    padding: 0 var(--spacing-42);
+  }
+}
+
+/* ==========================================================================
+   POSTER DISPLAY TYPOGRAPHY (From Beloved First Design)
+   ========================================================================== */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-goddess-gold);
+}
+
+.type-display {
+  font-size: clamp(48px, 10.5vw, var(--text-display));
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.type-heading-lg {
+  font-size: clamp(34px, 6.5vw, var(--text-heading-lg));
+  line-height: var(--leading-heading-lg);
+  letter-spacing: var(--tracking-heading-lg);
+}
+
+.type-heading {
+  font-size: clamp(26px, 4.2vw, var(--text-heading));
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+}
+
+.type-heading-sm {
+  font-size: clamp(19px, 2.6vw, var(--text-heading-sm));
+  line-height: var(--leading-heading-sm);
+  letter-spacing: var(--tracking-heading-sm);
+}
+
+.type-subheading {
+  font-size: var(--text-subheading);
+  line-height: var(--leading-subheading);
+  letter-spacing: var(--tracking-subheading);
+  font-weight: var(--font-weight-medium);
+}
+
+.type-caption {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  letter-spacing: var(--tracking-caption);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(245, 179, 36, 0.92);
+  max-width: 65ch;
+}
+
+.body-text-muted {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(245, 179, 36, 0.75);
+}
+
+/* ==========================================================================
+   DOTTED GOLD DIVIDERS
+   ========================================================================== */
+.dotted-divider {
+  border: none;
+  border-top: 1px dotted var(--color-goddess-gold);
+  width: 100%;
+  margin: var(--spacing-42) 0;
+  opacity: 0.85;
+}
+
+@media (min-width: 768px) {
+  .dotted-divider {
+    margin: var(--spacing-64) 0;
+  }
+}
+
+/* ==========================================================================
+   BUTTONS & CONTROLS — ANIMATED UI
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 42px;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-goddess-gold);
+  outline-offset: 2px;
+}
+
+/* Primary Button (From Uiverse.io by Navarog21, adapted to Goddess Theme) */
+.btn-primary {
+  position: relative;
+  background-color: transparent;
+  color: var(--color-goddess-gold);
+  border: 3px ridge var(--color-goddess-gold);
+  outline: none;
+  border-radius: 6px;
+  font-weight: 700;
+  padding: 10px 24px;
+  transition: all 0.6s ease;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 4%;
+  width: 92%;
+  height: 14px;
+  background-color: var(--surface-midnight-canvas);
+  transition: transform 0.5s ease;
+  transform-origin: center;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 4%;
+  width: 92%;
+  height: 14px;
+  background-color: var(--surface-midnight-canvas);
+  transition: transform 0.5s ease;
+  transform-origin: center;
+  z-index: 1;
+}
+
+/* Ensure cut-outs blend with cards if button is inside a card */
+.card-surface .btn-primary::before,
+.card-surface .btn-primary::after {
+  background-color: var(--surface-spice-card);
+}
+
+.card-deep .btn-primary::before,
+.card-deep .btn-primary::after {
+  background-color: var(--surface-charred-core);
+}
+
+.btn-primary > * {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary:hover::before,
+.btn-primary:hover::after {
+  transform: scale(0);
+}
+
+.btn-primary:hover {
+  background-color: rgba(245, 179, 36, 0.08);
+  color: #ffffff;
+  border-color: var(--color-gold-hover);
+  box-shadow: inset 0px 0px 25px rgba(245, 179, 36, 0.55), 0 0 16px rgba(245, 179, 36, 0.25) !important;
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
+}
+
+/* Secondary & Action Buttons: Order Now, Inquire, Ghost, Red (From Uiverse.io by Mike11jr, adapted to Goddess Theme) */
+.btn-red,
+.btn-ghost,
+.btn-blue,
+.floating-order-btn,
+.catalog-card .btn-ghost,
+.catalog-card .btn-primary {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 10px 22px;
+  box-shadow: 0 2px 0 2px #060c16 !important;
+}
+
+/* Red Accent Button (Sacred Kumkum Red) */
+.btn-red,
+.floating-order-btn {
+  background-color: var(--color-goddess-red);
+  border: 2px solid var(--color-goddess-gold);
+  color: #ffffff;
+}
+
+/* Sliding Skew Ribbon Sheen */
+.btn-red::before,
+.btn-ghost::before,
+.btn-blue::before,
+.floating-order-btn::before,
+.catalog-card .btn-ghost::before,
+.catalog-card .btn-primary::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 150%;
+  background-color: var(--color-goddess-gold);
+  opacity: 0.5;
+  top: 50%;
+  transform: skewX(30deg) translate(-160%, -50%);
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.btn-red:hover,
+.floating-order-btn:hover {
+  background-color: var(--color-red-soft);
+  color: #ffffff;
+  box-shadow: 0 2px 0 2px var(--color-goddess-gold) !important;
+}
+
+.btn-red:hover::before,
+.btn-ghost:hover::before,
+.btn-blue:hover::before,
+.floating-order-btn:hover::before,
+.catalog-card .btn-ghost:hover::before,
+.catalog-card .btn-primary:hover::before {
+  transform: skewX(30deg) translate(200%, -50%);
+  transition-delay: 0.1s;
+}
+
+.btn-red:active,
+.btn-ghost:active,
+.btn-blue:active,
+.floating-order-btn:active {
+  transform: scale(0.92);
+}
+
+/* Ghost Outline Button (Gold Outline) */
+.btn-ghost {
+  background-color: transparent;
+  border: 2px solid var(--color-goddess-gold);
+  color: var(--color-goddess-gold);
+}
+
+.btn-ghost:hover {
+  background-color: rgba(245, 179, 36, 0.18);
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 2px 0 2px var(--color-goddess-red) !important;
+}
+
+/* Royal Blue Accent Button */
+.btn-blue {
+  background-color: var(--color-royal-blue);
+  border: 2px solid var(--color-goddess-gold);
+  color: #ffffff;
+}
+
+.btn-blue:hover {
+  background-color: var(--color-blue-light);
+  box-shadow: 0 2px 0 2px var(--color-goddess-gold) !important;
+}
+
+/* Ensure inner contents stay above the sweeping ribbon */
+.btn-red > *,
+.btn-ghost > *,
+.btn-blue > *,
+.floating-order-btn > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Circular Icon Button */
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-circle);
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid var(--color-goddess-gold);
+  color: var(--color-goddess-gold);
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background-color: rgba(245, 179, 36, 0.2);
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   BADGES & ACCENTS (9999px Full Pill)
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-6);
+  border-radius: var(--radius-badges);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  line-height: 1.2;
+  box-shadow: none !important;
+}
+
+.badge-gold {
+  background-color: var(--color-goddess-gold);
+  color: var(--surface-midnight-canvas);
+  font-weight: 700;
+}
+
+.badge-red {
+  background-color: var(--color-goddess-red);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.badge-blue {
+  background-color: var(--color-royal-blue);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.badge-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-goddess-gold);
+  color: var(--color-goddess-gold);
+}
+
+/* ==========================================================================
+   CARDS (Strictly 6px Radius, Flat Depth, No Box-Shadow)
+   ========================================================================== */
+.card-surface {
+  background-color: var(--surface-spice-card);
+  border-radius: var(--radius-cards);
+  border: 1px solid var(--color-border-card);
+  padding: var(--spacing-20);
+  box-shadow: none !important;
+  position: relative;
+}
+
+.card-deep {
+  background-color: var(--surface-charred-core);
+  border-radius: var(--radius-cards);
+  border: 1px solid var(--color-border-card);
+  padding: var(--spacing-20);
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   INPUTS & FORMS (Pill Radius for Single Lines)
+   ========================================================================== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-16);
+}
+
+.form-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-goddess-gold);
+  font-weight: 500;
+}
+
+.input-pill {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-inputs);
+  padding: 12px 20px;
+  color: var(--color-goddess-gold);
+  font-family: var(--font-body);
+  font-size: 13px;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease;
+}
+
+.input-pill::placeholder {
+  color: rgba(245, 179, 36, 0.55);
+}
+
+.input-pill:focus {
+  outline: none;
+  border-color: var(--color-goddess-gold);
+}
+
+.select-pill {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5b324' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 44px;
+  cursor: pointer;
+}
+
+.select-pill option {
+  background-color: var(--surface-midnight-canvas);
+  color: var(--color-goddess-gold);
+}
+
+.textarea-custom {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-cards);
+  padding: 14px 20px;
+  color: var(--color-goddess-gold);
+  font-family: var(--font-body);
+  font-size: 13px;
+  min-height: 110px;
+  resize: vertical;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease;
+}
+
+.textarea-custom::placeholder {
+  color: rgba(245, 179, 36, 0.55);
+}
+
+.textarea-custom:focus {
+  outline: none;
+  border-color: var(--color-goddess-gold);
+}
+
+.form-success-message {
+  display: none;
+  background-color: var(--surface-charred-core);
+  border: 1.5px solid var(--color-goddess-gold);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-20);
+  margin-top: var(--spacing-20);
+  animation: formSuccessFadeIn 0.35s ease-out;
+}
+
+@keyframes formSuccessFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(10, 19, 34, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px dotted var(--color-goddess-gold);
+  padding: var(--spacing-12) 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-16);
+}
+
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.5vw, 34px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: var(--color-goddess-gold);
+}
+
+.brand-tagline {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-10);
+}
+
+@media (min-width: 992px) {
+  .nav-desktop {
+    display: flex;
+    gap: 6px;
+  }
+  .mobile-toggle {
+    display: none !important;
+  }
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav-desktop {
+    gap: var(--spacing-10);
+  }
+  .nav-link {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-goddess-gold);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-buttons);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  border-color: var(--color-goddess-gold);
+  background-color: rgba(245, 179, 36, 0.12);
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(6, 12, 22, 0.85);
+  z-index: 200;
+}
+
+.mobile-nav-overlay.open {
+  display: block;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--surface-midnight-canvas);
+  border-left: 2px solid var(--color-goddess-red);
+  z-index: 201;
+  padding: var(--spacing-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  transition: right 0.3s ease;
+}
+
+.mobile-nav-overlay.open .mobile-nav-drawer {
+  right: 0;
+}
+
+/* ==========================================================================
+   HERO SECTION (Poster Typographic Layout with Product on Canvas)
+   ========================================================================== */
+.hero-section {
+  padding: var(--spacing-42) 0 var(--spacing-64);
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .hero-section {
+    padding: var(--spacing-64) 0 var(--spacing-80);
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-42);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--spacing-42);
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  flex-wrap: wrap;
+}
+
+.hero-title {
+  margin-top: var(--spacing-8);
+  color: var(--color-goddess-gold);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-14);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-12);
+}
+
+/* Raw Product Showcase on Canvas */
+.showcase-raw {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 380px;
+}
+
+.showcase-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 480px;
+  filter: drop-shadow(0 0 24px rgba(245, 179, 36, 0.22));
+  transition: opacity 0.25s ease, transform 0.3s ease;
+}
+
+.showcase-img:hover {
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   PRODUCT CATALOG (Section 3)
+   ========================================================================== */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-20);
+  margin-top: var(--spacing-32);
+}
+
+@media (min-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalog-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-16);
+  height: 100%;
+}
+
+.catalog-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  padding: var(--spacing-12);
+  background-color: var(--surface-charred-core);
+  border-radius: var(--radius-cards);
+  border: 1px solid rgba(30, 53, 87, 0.5);
+  margin-bottom: var(--spacing-12);
+}
+
+.catalog-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.catalog-card:hover .catalog-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   PRODUCT DEEP DIVES (Groundnut & Cottonseed Oil)
+   ========================================================================== */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-42);
+  align-items: center;
+  margin-top: var(--spacing-24);
+}
+
+@media (min-width: 992px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .product-detail-grid.reverse > *:first-child {
+    order: 2;
+  }
+  .product-detail-grid.reverse > *:last-child {
+    order: 1;
+  }
+}
+
+/* Pack Size Selector Tabs */
+.pack-size-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-10);
+  margin: var(--spacing-20) 0;
+}
+
+.pack-pill-btn {
+  background-color: var(--surface-spice-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-12) var(--spacing-8);
+  color: var(--color-goddess-gold);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.pack-pill-btn:hover {
+  border-color: var(--color-goddess-gold);
+}
+
+.pack-pill-btn.active {
+  background-color: var(--surface-charred-core);
+  border-color: var(--color-goddess-gold);
+  border-width: 2px;
+}
+
+.pack-pill-btn .pack-vol {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1;
+  display: block;
+}
+
+.pack-pill-btn .pack-format {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: rgba(245, 179, 36, 0.85);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   FEATURES / WHY CHOOSE US (Section 6)
+   ========================================================================== */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-16);
+  margin-top: var(--spacing-32);
+}
+
+@media (min-width: 600px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.feature-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-circle);
+  border: 1.5px solid var(--color-goddess-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-goddess-gold);
+  background-color: rgba(211, 47, 47, 0.15);
+}
+
+/* ==========================================================================
+   WHOLESALE BANNER (Section 7)
+   ========================================================================== */
+.wholesale-banner {
+  background-color: var(--surface-spice-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-32) var(--spacing-24);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-32);
+}
+
+@media (min-width: 992px) {
+  .wholesale-banner {
+    grid-template-columns: 1.2fr 0.8fr;
+    padding: var(--spacing-42);
+  }
+}
+
+.wholesale-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+  margin: var(--spacing-16) 0;
+}
+
+.wholesale-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-10);
+  font-size: 13px;
+  color: rgba(245, 179, 36, 0.95);
+}
+
+.wholesale-item svg {
+  color: var(--color-goddess-red);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   GALLERY (Section 8)
+   ========================================================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-20);
+  margin-top: var(--spacing-32);
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-cards);
+  border: 1px solid var(--color-border-card);
+  background-color: var(--surface-spice-card);
+  cursor: pointer;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  user-select: none;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-goddess-gold);
+  box-shadow: 0 10px 28px rgba(245, 179, 36, 0.18), 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-card:focus-visible {
+  outline: 2px solid var(--color-goddess-gold);
+  outline-offset: 3px;
+}
+
+.gallery-img-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-charred-core);
+}
+
+.gallery-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.gallery-card:hover .gallery-img-container img {
+  transform: scale(1.06);
+}
+
+.gallery-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 19, 34, 0.62);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.gallery-card:hover .gallery-zoom-overlay,
+.gallery-card:focus-visible .gallery-zoom-overlay {
+  opacity: 1;
+}
+
+.gallery-zoom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(18, 32, 53, 0.95);
+  border: 1px solid var(--color-goddess-gold);
+  color: var(--color-goddess-gold);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transform: translateY(8px);
+  transition: transform 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-card:hover .gallery-zoom-badge,
+.gallery-card:focus-visible .gallery-zoom-badge {
+  transform: translateY(0);
+}
+
+.gallery-caption {
+  padding: var(--spacing-14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-8);
+}
+
+/* ==========================================================================
+   GALLERY LIGHTBOX MODAL
+   ========================================================================== */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(6, 11, 20, 0.93);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.gallery-modal-container {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.gallery-modal-card {
+  pointer-events: auto;
+  width: 100%;
+  background: var(--surface-spice-card);
+  border: 1px solid var(--color-goddess-gold);
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(245, 179, 36, 0.2);
+  transform: scale(0.92);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-modal.open .gallery-modal-card {
+  transform: scale(1);
+}
+
+.gallery-modal-img-wrapper {
+  width: 100%;
+  height: 56vh;
+  min-height: 280px;
+  max-height: 500px;
+  background: #050a12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-modal-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-modal-footer {
+  padding: var(--spacing-16) var(--spacing-20);
+  background: rgba(10, 19, 34, 0.98);
+  border-top: 1px solid rgba(245, 179, 36, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gallery-modal-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.gallery-counter {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--color-goddess-gold);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(245, 179, 36, 0.12);
+  padding: 3px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 179, 36, 0.3);
+}
+
+.gallery-modal-title {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 3vw, 24px);
+  color: var(--color-goddess-gold);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.gallery-modal-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.gallery-modal-close {
+  pointer-events: auto;
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-goddess-red);
+  border: 2px solid var(--color-goddess-gold);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-modal-close:hover {
+  transform: scale(1.1) rotate(90deg);
+  background: #b71c1c;
+}
+
+.gallery-nav-btn {
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(18, 32, 53, 0.9);
+  border: 1.5px solid var(--color-goddess-gold);
+  color: var(--color-goddess-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.gallery-nav-prev {
+  left: -24px;
+}
+
+.gallery-nav-next {
+  right: -24px;
+}
+
+.gallery-nav-btn:hover {
+  background: var(--color-goddess-gold);
+  color: #0a1322;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 20px rgba(245, 179, 36, 0.7);
+}
+
+@media (max-width: 768px) {
+  .gallery-modal {
+    padding: 12px;
+  }
+  .gallery-modal-close {
+    top: 8px;
+    right: 8px;
+    width: 38px;
+    height: 38px;
+  }
+  .gallery-nav-prev {
+    left: 8px;
+  }
+  .gallery-nav-next {
+    right: 8px;
+  }
+  .gallery-modal-img-wrapper {
+    height: 48vh;
+  }
+}
+
+/* ==========================================================================
+   FAQ ACCORDION (Section 9)
+   ========================================================================== */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  margin-top: var(--spacing-32);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-item {
+  background-color: var(--surface-spice-card);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq-item.active {
+  border-color: var(--color-goddess-gold);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: var(--spacing-16) var(--spacing-20);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-goddess-gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-12);
+  cursor: pointer;
+}
+
+.faq-icon {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  color: var(--color-goddess-red);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 var(--spacing-20) var(--spacing-16);
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(245, 179, 36, 0.88);
+  border-top: 1px dotted var(--color-border-card);
+  padding-top: var(--spacing-12);
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* ==========================================================================
+   CONTACT SECTION (Section 10)
+   ========================================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-32);
+  margin-top: var(--spacing-32);
+}
+
+@media (min-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: var(--spacing-42);
+  }
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  margin-top: var(--spacing-20);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-14);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-circle);
+  border: 1px solid var(--color-goddess-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-goddess-gold);
+  background-color: rgba(29, 78, 216, 0.2);
+}
+
+.contact-detail-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-goddess-red);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.contact-detail-val {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-goddess-gold);
+}
+
+.map-placeholder-box {
+  background-color: var(--surface-charred-core);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-24);
+  text-align: center;
+  margin-top: var(--spacing-20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-10);
+  min-height: 180px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  border-top: 1px dotted var(--color-goddess-gold);
+  padding: var(--spacing-42) 0 var(--spacing-32);
+  margin-top: var(--spacing-80);
+  background-color: var(--surface-charred-core);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-32);
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-14);
+  padding-top: var(--spacing-24);
+  margin-top: var(--spacing-32);
+  border-top: 1px dotted var(--color-border-card);
+  font-size: 12px;
+  color: rgba(245, 179, 36, 0.7);
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+  }
+}
+
+/* Floating Quick Order Action */
+.floating-order-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-goddess-red);
+  color: #ffffff;
+  border: 1px solid var(--color-goddess-gold);
+  border-radius: var(--radius-buttons);
+  padding: 10px 18px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.floating-order-btn:hover {
+  background-color: var(--color-red-soft);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   KINETIC ROTATING BADGE (From Uiverse.io by Kaizen0000, Goddess Theme)
+   ========================================================================== */
+.kinetic-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  text-decoration: none;
+  color: var(--color-goddess-gold);
+  font-family: "Oswald", 'Bebas Neue', sans-serif;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--surface-charred-core);
+  border: 1.5px solid rgba(245, 179, 36, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.kinetic-badge:hover {
+  border-color: var(--color-goddess-gold);
+  box-shadow: 0 0 25px rgba(245, 179, 36, 0.4);
+}
+
+/* The solid background that expands on hover */
+.badge-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-goddess-red);
+  border-radius: 50%;
+  transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+  z-index: 1;
+}
+
+.kinetic-badge:hover .badge-bg {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* The SVG Text Layer */
+.badge-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  /* Endless slow rotation */
+  animation: spinSlow 12s linear infinite;
+  transition: color 0.4s ease;
+  color: var(--color-goddess-gold);
+}
+
+.badge-text svg {
+  overflow: visible;
+}
+
+/* Smooth snap to white text on hover */
+.kinetic-badge:hover .badge-text {
+  color: #ffffff;
+  /* Accelerate the spin */
+  animation: spinSlow 3.5s linear infinite;
+}
+
+/* The Center Icon (Yellow Droplet) */
+.badge-icon {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+  color: var(--color-goddess-gold);
+}
+
+/* Rotate and scale the yellow droplet on hover */
+.kinetic-badge:hover .badge-icon {
+  transform: rotate(20deg) scale(1.22);
+}
+
+/* Keyframes for the infinite text path rotation */
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   CARD VIEW TAB SWITCHER (From Uiverse.io by ilkhoeri, Goddess Theme)
+   ========================================================================== */
+.card-tabs-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--spacing-24) auto;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.card-tabs-view .tabs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 6px;
+  background-color: var(--surface-charred-core);
+  border-radius: 14px;
+  border: 1px solid var(--color-border-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-tabs-view .wrap {
+  --round: 10px;
+  --p-x: 6px;
+  --p-y: 4px;
+  --w-label: 115px;
+  display: flex;
+  align-items: center;
+  padding: var(--p-y) var(--p-x);
+  position: relative;
+  background: var(--surface-spice-card);
+  border-radius: var(--round);
+  border: 1px solid rgba(245, 179, 36, 0.25);
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  top: 0;
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .card-tabs-view .wrap {
+    --w-label: 90px;
+  }
+}
+
+.card-tabs-view .wrap input {
+  height: 0;
+  width: 0;
+  position: absolute;
+  overflow: hidden;
+  display: none;
+  visibility: hidden;
+}
+
+.card-tabs-view .label {
+  cursor: pointer;
+  outline: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: var(--color-goddess-gold);
+  background: transparent;
+  padding: 10px 14px;
+  width: var(--w-label);
+  min-width: var(--w-label);
+  text-decoration: none;
+  user-select: none;
+  transition: color 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+.card-tabs-view .label span {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.card-tabs-view .wrap input[class*="rd-"]:checked + .label {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.card-tabs-view .bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: absolute;
+  transform-origin: 0 0 0;
+  height: 100%;
+  width: var(--w-label);
+  z-index: 0;
+  transition: transform 0.5s cubic-bezier(0.33, 0.83, 0.99, 0.98);
+}
+
+.card-tabs-view .bar::before,
+.card-tabs-view .bar::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--color-goddess-gold);
+}
+
+.card-tabs-view .bar::before {
+  top: 0;
+  border-radius: 0 0 9999px 9999px;
+}
+
+.card-tabs-view .bar::after {
+  bottom: 0;
+  border-radius: 9999px 9999px 0 0;
+}
+
+.card-tabs-view .slidebar {
+  position: absolute;
+  height: calc(100% - (var(--p-y) * 4));
+  width: var(--w-label);
+  border-radius: calc(var(--round) - var(--p-y));
+  background: var(--color-goddess-red);
+  transform-origin: 0 0 0;
+  z-index: 0;
+  transition: transform 0.5s cubic-bezier(0.33, 0.83, 0.99, 0.98);
+  box-shadow: 0 0 12px rgba(211, 47, 47, 0.5);
+}
+
+.card-tabs-view .rd-1:checked ~ .bar,
+.card-tabs-view .rd-1:checked ~ .slidebar,
+.card-tabs-view .rd-1 + .label:hover ~ .slidebar {
+  transform: translateX(0) scaleX(1);
+}
+
+.card-tabs-view .rd-2:checked ~ .bar,
+.card-tabs-view .rd-2:checked ~ .slidebar,
+.card-tabs-view .rd-2 + .label:hover ~ .slidebar {
+  transform: translateX(100%) scaleX(1);
+}
+
+.card-tabs-view .rd-3:checked ~ .bar,
+.card-tabs-view .rd-3:checked ~ .slidebar,
+.card-tabs-view .rd-3 + .label:hover ~ .slidebar {
+  transform: translateX(200%) scaleX(1);
+}
+
+/* Theme Aura Toggle Button */
+.card-tabs-view .theme {
+  color: var(--color-goddess-gold);
+  background-color: var(--surface-spice-card);
+  position: relative;
+  cursor: pointer;
+  z-index: 9;
+  user-select: none;
+  border: 1px solid var(--color-border-card);
+  border-radius: 8px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transition: background-color 0.25s linear, border-color 0.25s linear;
+}
+
+.card-tabs-view .theme:hover {
+  background-color: rgba(245, 179, 36, 0.15);
+  border-color: var(--color-goddess-gold);
+}
+
+.card-tabs-view .theme::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  width: 1px;
+  height: 80%;
+  background-color: rgba(245, 179, 36, 0.25);
+}
+
+.card-tabs-view .theme span {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0.125rem;
+  border-radius: 9999px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-tabs-view .mode:checked + .tabs-container .theme span.light,
+.card-tabs-view .mode + .tabs-container .theme span.dark {
+  display: none;
+}
+
+.card-tabs-view .mode + .tabs-container .theme span.light,
+.card-tabs-view .mode:checked + .tabs-container .theme span.dark {
+  display: flex;
+}
+
+.card-tabs-view .theme svg {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke: currentColor;
+  fill: none;
+  height: 20px;
+  width: 20px;
+}
+
+/* Ambiance glow mode activated when toggle checked */
+body.ambiance-glow {
+  --color-goddess-gold: #ffc93c;
+  --surface-midnight-canvas: #070e1b;
+}
+
+body.ambiance-glow .watermark-bg {
+  opacity: 0.2;
+}
+
+body.ambiance-glow .showcase-img {
+  filter: drop-shadow(0 0 32px rgba(245, 179, 36, 0.45));
+}
