@@ -39,19 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const gnPackData = {
     '15kg': {
-      img: 'assets/tin-groundnut-15kg.png',
+      img: 'tin-groundnut-15kg.png',
       packName: '15 kg Tin',
       title: '15 KG COMMERCIAL / HOUSEHOLD TIN',
       desc: 'Heavy-gauge traditional square tin with integrated handle and tamper-evident pourer cap. Engineered for bulk household use, restaurants, and caterers requiring reliable stock.'
     },
     '5l': {
-      img: 'assets/can-groundnut-5l.png',
+      img: 'can-groundnut-5l.png',
       packName: '5 L Can',
       title: '5 LITER CONVENIENCE CAN',
       desc: 'Sturdy food-grade container with ergonomic carry handle. Perfect balance of volume and kitchen counter convenience for monthly family consumption.'
     },
     '1l': {
-      img: 'assets/bottle-groundnut-1l.png',
+      img: 'bottle-groundnut-1l.png',
       packName: '1 L Bottle',
       title: '1 LITER DAILY BOTTLE',
       desc: 'Transparent food-grade PET bottle with grooved comfort grip and easy-dosing cap. Ideal for everyday culinary handling and compact pantry storage.'
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const csPackData = {
     '15kg': {
-      img: 'assets/tin-cottonseed-15kg.png',
+      img: 'tin-cottonseed-15kg.png',
       packName: '15 kg Tin',
       title: '15 KG COMMERCIAL / WHOLESALE TIN',
       desc: 'Sealed standard tin providing optimal freshness for heavy frying, commercial kitchens, sweet shops, and bulk food establishments.'

@@ -38,7 +38,7 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  background-image: url('../assets/watermark-botanical.svg');
+  background-image: url('watermark-botanical.svg');
   background-repeat: repeat;
   background-size: 350px 350px;
   opacity: 0.12;
